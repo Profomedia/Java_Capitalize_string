@@ -8,15 +8,11 @@ public class App {
         System.out.print("Enter name or city: ");
         word = scanner.nextLine().trim();
         
-        while(word.isBlank()){
-            System.out.print("Input cannot be empty: ");
+        while(word.isBlank() || word.length() < 3){
+            System.out.print("Min length of char should be at least 3: ");
             word = scanner.nextLine().trim();
             
-            while(word.length() < 3){
-                System.out.print("Min length of char should be at least 3: ");
-                word = scanner.nextLine().trim();
-                continue;
-            }
+            // TODO  split the conditions to prompt whether the input is blank
         }
         scanner.close();
         System.out.println(cap(word));
